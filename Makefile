@@ -8,7 +8,6 @@ BIN_DIR?=bin
 BIN?=$(BIN_DIR)/$(TARGET_EXEC)
 
 SOURCES := $(shell find $(SRC_DIRS) -type f -name *.cpp -or -name *.c -or -name *.s)
-# OBJS := $(patsubst $(SRC_DIRS)/%,$(BUILD_DIR)/%,$(SOURCES:.cpp=.o))
 TEMP_OBJECTS_C = $(patsubst $(SRC_DIRS)/%.c,$(BUILD_DIR)/%.c.o,$(SOURCES))
 TEMP_OBJECTS_S = $(patsubst $(SRC_DIRS)/%.s,$(BUILD_DIR)/%.s.o,$(TEMP_OBJECTS_C))
 TEMP_OBJECTS_CPP = $(patsubst $(SRC_DIRS)/%.cpp,$(BUILD_DIR)/%.cpp.o,$(TEMP_OBJECTS_S))
